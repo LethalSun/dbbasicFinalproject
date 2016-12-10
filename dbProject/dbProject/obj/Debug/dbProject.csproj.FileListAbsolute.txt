@@ -1,0 +1,13 @@
+c:\users\longshore\documents\visual studio 2015\Projects\dbProject\dbProject\bin\Debug\dbProject.exe.config
+c:\users\longshore\documents\visual studio 2015\Projects\dbProject\dbProject\bin\Debug\dbProject.exe
+c:\users\longshore\documents\visual studio 2015\Projects\dbProject\dbProject\bin\Debug\dbProject.pdb
+c:\users\longshore\documents\visual studio 2015\Projects\dbProject\dbProject\obj\Debug\dbProject.csprojResolveAssemblyReference.cache
+c:\users\longshore\documents\visual studio 2015\Projects\dbProject\dbProject\obj\Debug\dbProject.Form1.resources
+c:\users\longshore\documents\visual studio 2015\Projects\dbProject\dbProject\obj\Debug\dbProject.Properties.Resources.resources
+c:\users\longshore\documents\visual studio 2015\Projects\dbProject\dbProject\obj\Debug\dbProject.csproj.GenerateResource.Cache
+c:\users\longshore\documents\visual studio 2015\Projects\dbProject\dbProject\obj\Debug\dbProject.exe
+c:\users\longshore\documents\visual studio 2015\Projects\dbProject\dbProject\obj\Debug\dbProject.pdb
+c:\users\longshore\documents\visual studio 2015\Projects\dbProject\dbProject\obj\Debug\dbProject.Form2.resources
+C:\DEV\dbbasicFinalproject\dbProject\dbProject\bin\Debug\dbProject.exe.config
+C:\DEV\dbbasicFinalproject\dbProject\dbProject\obj\Debug\dbProject.exe
+C:\DEV\dbbasicFinalproject\dbProject\dbProject\obj\Debug\dbProject.pdb
