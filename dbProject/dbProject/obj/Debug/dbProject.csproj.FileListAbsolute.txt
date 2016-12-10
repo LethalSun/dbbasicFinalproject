@@ -11,3 +11,13 @@ c:\users\longshore\documents\visual studio 2015\Projects\dbProject\dbProject\obj
 C:\DEV\dbbasicFinalproject\dbProject\dbProject\bin\Debug\dbProject.exe.config
 C:\DEV\dbbasicFinalproject\dbProject\dbProject\obj\Debug\dbProject.exe
 C:\DEV\dbbasicFinalproject\dbProject\dbProject\obj\Debug\dbProject.pdb
+C:\Users\KIM HYUNWOO\Documents\dbfinalproject\dbProject\dbProject\bin\Debug\dbProject.exe.config
+C:\Users\KIM HYUNWOO\Documents\dbfinalproject\dbProject\dbProject\obj\Debug\dbProject.pdb
+C:\Users\KIM HYUNWOO\Documents\dbfinalproject\dbProject\dbProject\bin\Debug\dbProject.exe
+C:\Users\KIM HYUNWOO\Documents\dbfinalproject\dbProject\dbProject\bin\Debug\dbProject.pdb
+C:\Users\KIM HYUNWOO\Documents\dbfinalproject\dbProject\dbProject\obj\Debug\dbProject.csprojResolveAssemblyReference.cache
+C:\Users\KIM HYUNWOO\Documents\dbfinalproject\dbProject\dbProject\obj\Debug\dbProject.Form1.resources
+C:\Users\KIM HYUNWOO\Documents\dbfinalproject\dbProject\dbProject\obj\Debug\dbProject.Form2.resources
+C:\Users\KIM HYUNWOO\Documents\dbfinalproject\dbProject\dbProject\obj\Debug\dbProject.Properties.Resources.resources
+C:\Users\KIM HYUNWOO\Documents\dbfinalproject\dbProject\dbProject\obj\Debug\dbProject.csproj.GenerateResource.Cache
+C:\Users\KIM HYUNWOO\Documents\dbfinalproject\dbProject\dbProject\obj\Debug\dbProject.exe
