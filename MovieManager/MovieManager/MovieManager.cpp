@@ -5,7 +5,7 @@
 #include "stdafx.h"
 #include "MovieManager.h"
 #include "MovieManagerDlg.h"
-
+#include "define.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif

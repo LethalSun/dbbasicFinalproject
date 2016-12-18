@@ -1,6 +1,6 @@
 ﻿  MovieManagerDlg.cpp
-c:\users\longshore\documents\visual studio 2015\projects\moviemanager\moviemanager\moviemanagerdlg.cpp(263): warning C4018: '<': signed/unsigned mismatch
-c:\users\longshore\documents\visual studio 2015\projects\moviemanager\moviemanager\moviemanagerdlg.cpp(270): warning C4018: '<': signed/unsigned mismatch
-c:\users\longshore\documents\visual studio 2015\projects\moviemanager\moviemanager\moviemanagerdlg.cpp(251): warning C4101: 'nListPos': unreferenced local variable
-  MovieManager.vcxproj -> c:\users\longshore\documents\visual studio 2015\Projects\MovieManager\Debug\MovieManager.exe
-  MovieManager.vcxproj -> c:\users\longshore\documents\visual studio 2015\Projects\MovieManager\Debug\MovieManager.pdb (Partial PDB)
+c:\users\kim hyunwoo\documents\dbfinalproject\moviemanager\moviemanager\moviemanagerdlg.cpp(63): warning C4018: '<': signed/unsigned mismatch
+c:\users\kim hyunwoo\documents\dbfinalproject\moviemanager\moviemanager\moviemanagerdlg.cpp(312): warning C4018: '<': signed/unsigned mismatch
+c:\users\kim hyunwoo\documents\dbfinalproject\moviemanager\moviemanager\moviemanagerdlg.cpp(319): warning C4018: '<': signed/unsigned mismatch
+  MovieManager.vcxproj -> C:\Users\KIM HYUNWOO\Documents\dbfinalproject\MovieManager\Debug\MovieManager.exe
+  MovieManager.vcxproj -> C:\Users\KIM HYUNWOO\Documents\dbfinalproject\MovieManager\Debug\MovieManager.pdb (Partial PDB)
