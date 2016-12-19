@@ -84,6 +84,11 @@ public:
 	CEdit m_edit_video_size;
 	CStatic m_picture_poster;
 
+	//비디오 인포 포스터 변수
 	CImage* m_poster;
+
+	//인포박스에 선택된 동영상파일의 경로정보.
+	CString m_VideoLOC;
 	
+	afx_msg void OnBnClickedButton5();
 };

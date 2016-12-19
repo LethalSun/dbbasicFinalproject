@@ -51,7 +51,7 @@ void CMovieManagerDlg::MakeVideoInfoGroup()
 bool CMovieManagerDlg::InsertIntoVideoInfoListBox()
 {
 	m_listbox_videoList.DeleteAllItems();
-	int idx1 = 1;
+	int idx1 = 0;
 	//std::vector<CVideoInfo*>::iterator iter = m_VideoInfo.begin();
 	//for (;iter != m_VideoInfo.end();++iter)
 	//{
@@ -70,7 +70,7 @@ bool CMovieManagerDlg::InsertIntoVideoInfoListBox()
 		m_listbox_videoList.SetItem(idx1, 2, LVIF_TEXT, tags, 0, 0, 0, NULL);
 		++idx1;
 	}
-	return false;
+	return true;
 }
 
 // CAboutDlg dialog used for App About
@@ -140,6 +140,7 @@ BEGIN_MESSAGE_MAP(CMovieManagerDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BUTTON2, &CMovieManagerDlg::OnBnClickedButton2)
 	ON_NOTIFY(LVN_ITEMCHANGED, IDC_LIST2, &CMovieManagerDlg::OnLvnItemchangedList2)
 	ON_LBN_DBLCLK(IDC_LIST1, &CMovieManagerDlg::OnLbnDblclkList1)
+	ON_BN_CLICKED(IDC_BUTTON5, &CMovieManagerDlg::OnBnClickedButton5)
 END_MESSAGE_MAP()
 
 // CMovieManagerDlg message handlers
@@ -276,43 +277,44 @@ void CMovieManagerDlg::OnBnClickedButton1()
 void CMovieManagerDlg::OnBnClickedButton2()
 {
 	// TODO: Add your control notification handler code here
-	CString keyword, category;
+	CString keyword, category, sql1;
 	int categoryIdx;
 	int idx, actotrIdx, tagIdx;
 
 	// 키워드 불러오기
 	m_edit_serachKeyword.GetWindowTextW(keyword);
+	
 	// 카테고리 불러오기
 	categoryIdx = m_combo_category.GetCurSel();
 	m_combo_category.GetLBText(categoryIdx, category);
 
 	if (categoryIdx == 0 )//제목
 	{
-		CString sql;
-		sql.Format(_T("select * from video as v inner join series as s on v.series_idseries = s.idseries inner join image as i on v.image_idimage = i.idimage where idvideo in(select video_idvideo from video_has_tag where tag_idtag = (select idtag from tag as t where t.name = '%s'))"), keyword);
+		
+		sql1.Format(_T("select * from video as v inner join series as s on v.series_idseries = s.idseries inner join image as i on v.image_idimage = i.idimage where v.name like '%s%s%s'"), "%", keyword, "%");
 
 		m_VideoInfo.clear();
-		m_pOdbcManager->Exec(sql);
+		m_pOdbcManager->Exec(sql1);
 		m_pOdbcManager->BindAndFetchVideoWithPoster(&m_VideoInfo);
 		InsertIntoVideoInfoListBox();
 	}
 	else if (categoryIdx == 1)//배우
 	{
-		CString sql;
-		sql.Format(_T("select * from video as v inner join series as s on v.series_idseries = s.idseries inner join image as i on v.image_idimage = i.idimage where idvideo in(select video_idvideo from video_has_tag where tag_idtag = (select idtag from tag as t where t.name = '%s'))"), keyword);
+		CString sql2;
+		sql2.Format(_T("select * from video as v inner join series as s on v.series_idseries = s.idseries inner join image as i on v.image_idimage = i.idimage where idvideo in(select video_idvideo from video_has_actor where actor_idactor in (select idactor from actor as a where a.name like '%s%s%s'))"),"%", keyword,"%");
 
 		m_VideoInfo.clear();
-		m_pOdbcManager->Exec(sql);
+		m_pOdbcManager->Exec(sql2);
 		m_pOdbcManager->BindAndFetchVideoWithPoster(&m_VideoInfo);
 		InsertIntoVideoInfoListBox();
 	}
 	else if (categoryIdx == 2)//시리즈
 	{
-		CString sql;
-		sql.Format(_T("select * from video as v inner join series as s on v.series_idseries = s.idseries inner join image as i on v.image_idimage = i.idimage where idvideo in(select video_idvideo from video_has_tag where tag_idtag = (select idtag from tag as t where t.name = '%s'))"), keyword);
+		CString sql3;
+		sql3.Format(_T("select * from video as v inner join series as s on v.series_idseries = s.idseries inner join image as i on v.image_idimage = i.idimage where s.name like '%%%s%%'"), keyword);
 
 		m_VideoInfo.clear();
-		m_pOdbcManager->Exec(sql);
+		m_pOdbcManager->Exec(sql3);
 		m_pOdbcManager->BindAndFetchVideoWithPoster(&m_VideoInfo);
 		InsertIntoVideoInfoListBox();
 	}
@@ -323,11 +325,7 @@ void CMovieManagerDlg::OnBnClickedButton2()
 
 	// 모든 아이템 지우기
 	m_listbox_videoList.DeleteAllItems();
-	// 모든 컬럼 지우기
-	//while (m_listbox_videoList.GetHeaderCtrl()->GetItemCount() > 0)
-	//{
-		//m_listbox_videoList.DeleteColumn(0);
-	//}
+	
 	// 리스트 아이템 갯수
 	//int nListPos;
 	//nListPos = m_listbox_videoList.GetItemCount();
@@ -414,6 +412,7 @@ void CMovieManagerDlg::OnLvnItemchangedList2(NMHDR *pNMHDR, LRESULT *pResult)
 	SetStretchBltMode(m_poster->GetDC(),COLORONCOLOR);  // set iMode.
 	m_poster->StretchBlt(dc->m_hDC,0,0,160,230, SRCCOPY);
 
+	m_VideoLOC = m_VideoInfo.at(m_nSelectedItem)->fileLoc;
 	
 	
 	//m_poster.Draw(dc->m_hDC, 0, 0, m_poster.GetWidth(), m_poster.GetHeight());
@@ -445,4 +444,11 @@ void CMovieManagerDlg::OnLbnDblclkList1()
 	m_pOdbcManager->BindAndFetchVideoWithPoster(&m_VideoInfo);
 	InsertIntoVideoInfoListBox();
 
+}
+
+
+void CMovieManagerDlg::OnBnClickedButton5()
+{
+	// TODO: Add your control notification handler code here
+	ShellExecute(NULL, L"open", L"C:\\Program Files (x86)\\DAUM\\PotPlayer\\PotPlayer.exe", m_VideoLOC, NULL, SW_SHOW);
 }

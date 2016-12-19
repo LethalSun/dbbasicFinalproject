@@ -1,6 +1,0 @@
-﻿  MovieManagerDlg.cpp
-c:\users\kim hyunwoo\documents\dbfinalproject\moviemanager\moviemanager\moviemanagerdlg.cpp(63): warning C4018: '<': signed/unsigned mismatch
-c:\users\kim hyunwoo\documents\dbfinalproject\moviemanager\moviemanager\moviemanagerdlg.cpp(312): warning C4018: '<': signed/unsigned mismatch
-c:\users\kim hyunwoo\documents\dbfinalproject\moviemanager\moviemanager\moviemanagerdlg.cpp(319): warning C4018: '<': signed/unsigned mismatch
-  MovieManager.vcxproj -> C:\Users\KIM HYUNWOO\Documents\dbfinalproject\MovieManager\Debug\MovieManager.exe
-  MovieManager.vcxproj -> C:\Users\KIM HYUNWOO\Documents\dbfinalproject\MovieManager\Debug\MovieManager.pdb (Partial PDB)
